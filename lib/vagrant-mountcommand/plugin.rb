@@ -12,7 +12,7 @@ module VagrantPlugins
         Config
       end
 
-      require_relative 'command'
+      require_relative 'action'
       %w{up reload}.each do |action|
         action_hook(:MountCommand, "machine_action_#{action}".to_sym) do |hook|
           hook.after(Vagrant::Action::Builtin::NFS, Action::Command)
