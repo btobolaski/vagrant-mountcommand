@@ -13,10 +13,18 @@ module VagrantPlugins
 
           @machine = env[:machine]
 
-          unless mount_commands.empty?
+          # Setup a sentinel to check whether the machine has already been provisioned.
+          sentinel = env[:machine].data_dir.join("action_provision")
+          run_mount_commands = true
+          if sentinel.file?
+            timestamp = sentinel.open('rb').read
+            if Integer(timestamp) + 60 > Time.now.to_i
+              run_mount_commands = false
+            end
+          end
+
+          if run_mount_commands and !mount_commands.empty?
             mount_command
-          else
-            @env[:ui].info I18n.t('vagrant_mountcommand.error.commands_not_found')
           end
         end
 
