@@ -3,16 +3,15 @@ module VagrantPlugins
     class Config < Vagrant.plugin('2', :config)
 
       def initialize
-        @__default_command = {}
         @__mount_commands = []
       end
 
-      def mount_command
+      def commands
         @__mount_commands
       end
 
-      def mount_command(command)
-        @__mount_commands.push command
+      def command(command_to_run)
+        @__mount_commands.push command_to_run
       end
 
       def merge(other)

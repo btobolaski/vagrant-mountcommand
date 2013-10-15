@@ -1,6 +1,8 @@
 en:
-  vagrant_mount_command:
+  vagrant_mountcommand:
     action:
       mount_command: "Running mount command..."
     config:
       not_a_string: "The command must be a string"
+    error:
+      commands_not_found: "Unable to find commands"

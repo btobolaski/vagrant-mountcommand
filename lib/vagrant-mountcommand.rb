@@ -4,7 +4,9 @@ rescue LoadError
   raise "The Vagrant mount-command plugin must be run within Vagrant"
 end
 
-require "vagrant-mount-command/plugin"
+require "vagrant-mountcommand/plugin"
+require "vagrant-mountcommand/version"
+require "vagrant-mountcommand/errors"
 
 module VagrantPlugins
   module MountCommand
