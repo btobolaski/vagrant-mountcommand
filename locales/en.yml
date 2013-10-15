@@ -1,0 +1,6 @@
+en:
+  vagrant_mount_command:
+    action:
+      mount_command: "Running mount command..."
+    config:
+      not_a_string: "The command must be a string"

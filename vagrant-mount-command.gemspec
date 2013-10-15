@@ -4,7 +4,7 @@ $:.push File.expand_path("../lib", __FILE__)
 Gem::Specification.new do |s|
   s.name              = "vagrant-mount-command"
   s.version           = "0.0.1"
-  s.platform          = Gem::Platform::Ruby
+  s.platform          = Gem::Platform::RUBY
   s.authors           = ["Brendan Tobolaski"]
   s.email             = ["brendan@tobolaski.com"]
   s.homepage          = "https://github.com/btobolaski/vagrant-mount-command"
