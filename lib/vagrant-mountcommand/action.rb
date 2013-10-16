@@ -18,7 +18,7 @@ module VagrantPlugins
           run_mount_commands = true
           if sentinel.file?
             timestamp = sentinel.open('rb').read
-            if Integer(timestamp) + 60 > Time.now.to_i
+            if Integer(timestamp) + 180 > Time.now.to_i
               run_mount_commands = false
             end
           end
