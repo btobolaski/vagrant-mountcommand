@@ -1,10 +1,11 @@
 # -*- encoding: utf-8 -*-
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require "vagrant-mountcommand/version"
 
 Gem::Specification.new do |s|
   s.name              = "vagrant-mountcommand"
-  s.version           = "0.0.1"
+  s.version           = VagrantPlugins::MountCommand::VERSION
   s.platform          = Gem::Platform::RUBY
   s.authors           = ["Brendan Tobolaski"]
   s.email             = ["brendan@tobolaski.com"]
