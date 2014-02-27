@@ -15,7 +15,11 @@ module VagrantPlugins
       require_relative 'action'
       %w{up reload}.each do |action|
         action_hook(:MountCommand, "machine_action_#{action}".to_sym) do |hook|
-          hook.before(Vagrant::Action::Builtin::NFS, Action::Command)
+          target = (Vagrant::Action::Builtin.const_defined?(:NFS) ?
+            Vagrant::Action::Builtin::NFS :
+            Vagrant::Action::Builtin::SyncedFolders)
+
+          hook.before(target, Action::Command)
         end
       end
     end
